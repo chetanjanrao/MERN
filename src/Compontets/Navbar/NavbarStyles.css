@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* body {
+	margin-left: 10px;
+	border-right: 1px solid black;
+} */
+.navbar-header {
+	border-bottom: 1px solid #000000;
+	width: 100vw;
+	height: 56px;
+}
+.navbar-header .navbar {
+	display: flex;
+	justify-content: space-between;
+}
+.navbar-header .navbar .navbar-left {
+	display: flex;
+	justify-content: flex-end;
+	/* border: 1px solid red; */
+	width: 170px;
+	height: 56px;
+}
+.navbar-header .navbar .navbar-left .hamburger-div {
+	font-size: 25px;
+	cursor: pointer;
+
+	margin: 15px;
+	width: 20px;
+	height: auto;
+}
+.navbar-header .navbar .navbar-left .log-div {
+	/* padding: 18px 14px 18px 16px; */
+	cursor: pointer;
+
+	/* border: 1px solid blue; */
+}
+.navbar-header .navbar .navbar-left .logoSyle {
+	/* border: 1px solid green; */
+	margin: 15px;
+	width: 90px;
+	height: 25px;
+}
+/* -------------------------------------------------- midddle part  ------------ -----------------------------------  */
+.navbar-middle {
+	border: 1px solid gray;
+	width: 40%;
+	height: 40px;
+	border-radius: 50px;
+	margin: 10px;
+	background-color: aquamarine;
+}
+.navbar-middle input {
+	margin: 10px 10px 10px 20px;
+	width: 60%;
+	height: 20px;
+	background-color: red;
+	font-size: 20px;
+	border: transparent;
+	border: 0px;
+	outline: none;
+}
+
+.navbar-middle .search-result:hover {
+	cursor: pointer;
+	background-color: #f8f8f1;
+}
+/*---------------------------------------------right part -------------------------------------------------------------*/
+.navbar-right {
+	border: 1px solid gray;
+	height: 56px;
+	/* background-color: blue; */
+	width: 225px;
+}
+.navbar-right .right-child {
+	display: flex;
+	justify-content: space-around;
+}
+.navbar-right .right-child .video-upload {
+	margin: 10px;
+	font-size: 25px;
+}
+.navbar-right .right-child .bell {
+	font-size: 25px;
+	margin: 10px;
+}
+.navbar-right .profile img {
+	width: 25px;
+	margin: 10px;
+	height: 25px;
+	border-radius: 50%;
+}
