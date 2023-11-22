@@ -1,0 +1,265 @@
+.App {
+	font-family: sans-serif;
+	text-align: center;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* body {
+	margin-left: 10px;
+	border-right: 1px solid black;
+} */
+.navbar-header {
+	border-bottom: 1px solid #000000;
+	width: 100vw;
+	height: 56px;
+	padding: 0 16px;
+}
+
+.navbar-header .navbar {
+	display: flex;
+	justify-content: space-between;
+}
+.navbar-header .navbar .navbar-left {
+	display: flex;
+	justify-content: flex-end;
+	/* border: 1px solid red; */
+	width: 170px;
+	height: 56px;
+	margin-right: 10%;
+}
+.navbar-header .navbar .navbar-left .hamburger-div {
+	font-size: 25px;
+	cursor: pointer;
+	/* border: 1px solid black; */
+	/* margin: 9px 15px 0px 0px; */
+	width: 40px;
+	margin: 8px;
+	height: 40px;
+	/* height: auto; */
+}
+.hamburger {
+	margin: 4px 5px;
+}
+.hamburger-div:hover {
+	background-color: silver;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.navbar-header .navbar .navbar-left .log-div {
+	/* padding: 18px 14px 18px 16px; */
+	cursor: pointer;
+
+	/* border: 1px solid blue; */
+}
+.navbar-header .navbar .navbar-left .logoSyle {
+	/* border: 1px solid green; */
+	margin: 15px;
+	width: 90px;
+	height: 25px;
+}
+/* -------------------------------------------------- midddle part  ------------ -----------------------------------  */
+.navbar-middle {
+	width: 100%;
+	height: 40px;
+	/* border: 1px solid blue; */
+	border-radius: 50px;
+	/* background-color: red; */
+	display: flex;
+	margin: 10px;
+	justify-content: space-between;
+}
+.navbar-middle .search-input {
+	display: flex;
+	/* border: 1px solid gray; */
+	justify-content: space-between;
+	border-radius: 50px 0 0 50px;
+	width: 100%;
+}
+.borderBeforeClick {
+	border: 1px solid gray;
+}
+.mother {
+	border: 1px solid blue;
+	/* background-color: red; */
+}
+.navbar-middle .search-input input {
+	width: 80%;
+	margin-left: 15px;
+	border: 50px 0 0 50px;
+	border: 0;
+	outline: none;
+	font-size: 20px;
+}
+
+.navbar-middle .search-input .search-clear {
+	padding: 2px;
+	height: 38px;
+}
+.navbar-middle .search-input .search-clear:hover {
+	cursor: pointer;
+}
+.search-bar-button {
+	height: 40px;
+	border: 1px solid gray;
+	width: 64px;
+	border-radius: 0px 50px 50px 0px;
+	padding: 5px 10px 10px 10px;
+	background-color: #f8f8f8;
+}
+.search-bar-button:hover {
+	background-color: #ecf0f1;
+	cursor: pointer;
+}
+.navbar-middle-mobile {
+	padding-bottom: 7px;
+	/* background-color: red; */
+}
+/* mobile responsive */
+@media screen and (max-width: 655px) {
+	.navbar-middle {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 655px) {
+	.search-for-mobile {
+		display: none;
+	}
+}
+@media screen and (max-width: 655px) {
+	.search-for-mobile {
+		display: block;
+		margin-top: 10px;
+	}
+	.search-for-mobile:hover {
+		cursor: pointer;
+	}
+}
+
+/*---------------------------------------------right part -------------------------------------------------------------*/
+.navbar-right {
+	/* border: 1px solid gray; */
+	height: 56px;
+	/* background-color: blue; */
+	/* display: flex; */
+	/* width: 256px; */
+	margin-left: 10%;
+}
+.navbar-right .right-child {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+.navbar-right .right-child .video-upload {
+	margin: 10px 12px;
+	font-size: 25px;
+}
+.navbar-right .right-child .video-upload .videoCapture {
+	margin: 1px 4px;
+}
+.navbar-right .right-child .video-upload:hover {
+	border-radius: 50%;
+	background-color: silver;
+	cursor: pointer;
+}
+.navbar-right .right-child .bell {
+	font-size: 25px;
+	margin: 10px 12px;
+}
+.notificationBell {
+	margin: 1px 4px;
+}
+.bell:hover {
+	border-radius: 50%;
+	background-color: silver;
+	cursor: pointer;
+}
+.navbar-right .profile img {
+	width: 25px;
+	margin: 15px 12px;
+	height: 25px;
+	border-radius: 50%;
+}
+.navbar-right .profile img:hover {
+	cursor: pointer;
+}
+@media screen and (max-width: 655px) {
+	.navbar-right {
+		margin-left: 0;
+	}
+}
+/*************After click ******************************/
+.tempNavbarContainer {
+	margin: 0px 20px 0px 5px;
+}
+.navbar-middle-tempSearchBar {
+	width: 100%;
+	height: 40px;
+	/* border: 1px solid blue; */
+	border-radius: 50px;
+
+	display: flex;
+	margin: 10px;
+
+	justify-content: space-between;
+}
+.backToHome {
+	/* border: 1px solid black; */
+	margin: 0px 10px 0px 0px;
+}
+.backToHome .backToHomeButton {
+	margin: 7px 10px;
+}
+.backToHome:hover {
+	background-color: silver;
+	cursor: pointer;
+	border-radius: 50%;
+}
+.search-input-tempSearchBar {
+	display: flex;
+	/* border: 1px solid gray; */
+	justify-content: space-between;
+	border-radius: 50px 0 0 50px;
+	width: 100%;
+}
+.search-input-tempSearchBar input {
+	width: 80%;
+	margin-left: 15px;
+	border: 50px 0 0 50px;
+	border: 0;
+	outline: none;
+	font-size: 20px;
+}
+.search-clear-tempSearchBar {
+	padding: 2px;
+	height: 38px;
+}
+.search-bar-button-tempSearchBar {
+	height: 40px;
+	border: 1px solid gray;
+	width: 64px;
+	border-radius: 0px 50px 50px 0px;
+	padding: 5px 10px 10px 10px;
+	background-color: #f8f8f8;
+}
+.search-bar-button-tempSearchBar:hover {
+	background-color: #ecf0f1;
+	cursor: pointer;
+}
+.borderBeforeClickTempSearchBar {
+	border: 1px solid gray;
+}
+.mother {
+	border: 1px solid blue;
+	/* background-color: red; */
+}
+.tempSearchBarClear {
+	cursor: pointer;
+}
+.tempSearchBarSearch {
+	cursor: pointer;
+}

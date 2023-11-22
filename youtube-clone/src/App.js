@@ -1,12 +1,12 @@
-
-import './App.css';
+import Navbar from './Compontets/Navbar/Navbar';
 
 function App() {
         return (
                 <div className="App">
-                        <header className="App-header">
+                        <Navbar />
+                        {/* <header className="App-header">
                                 <h1>This is chetan</h1>
-                        </header>
+                        </header> */}
                 </div>
         );
 }
