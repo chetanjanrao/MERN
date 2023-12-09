@@ -1,13 +1,18 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./NavbarStyles.css";
-//import MiddleNavbar from "./MiddleNavbar";
 //import youtubeDesktop from "../../utils/Navbar/YoutubeDesktop.png";
+import Sidebar from "../Sidebar/Sidebar"
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import VideoCallOutlinedIcon from "@mui/icons-material/VideoCallOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import MiniSidebar from "../MiniSidebar.js/MiniSidebar";
+import BlurTextureComponent from "../BlurTextureComponent/BlurTextureComponent";
+import FeedVideos from "../FeedVideos/FeedVideos";
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
+//import InputComponent from "../InputComponent";
 // import SearchBarForDesktop from "./SearchBarForDesktop";
 /*------------------------------  import for App---------------------------------------------------------------------------------- */
 export default function Navbar() {
@@ -17,7 +22,12 @@ export default function Navbar() {
         const [mobileToDesktopSearchBar, setMobileToDesktopSearchBar] = useState(
                 false
         ); //for click to expand the search bar
+        const [selectedCategory, setSelectedCategory] = useState('business');
+        const [isSidebarOpen, setIsSidebarOpen] = useState(false);   //  for sidebar open check
+        const [isBlurCompnentOn, setIsBlurComponentOn] = useState(false);
         const borderColorRef = useRef(null);
+        const sidebarref = useRef(null);
+
 
         function clearQuery() {
                 console.log("before" + searchQuery.length);
@@ -37,9 +47,27 @@ export default function Navbar() {
                 console.log(mobileToDesktopSearchBar);
                 console.log("you clicked");
         }
+        function handleSidebarOpenClose(e) {
+                if (!sidebarref.current.contains(e.target)) {
+                        setIsSidebarOpen(false)
+                        setIsBlurComponentOn(false);
+                }
 
+        }
+        useEffect(() => {
+                document.addEventListener("mousedown", handleSidebarOpenClose);
+                return () => document.removeEventListener("mousedown", handleSidebarOpenClose);
+        });
+        function sendCategory(categoryObj) {
+
+                setSelectedCategory(categoryObj);
+        }
+        document.body.style.overflow = isSidebarOpen ? 'hidden' : 'auto';
         return (
                 <>
+                        <Sidebar sidebarref={sidebarref} isSidebarOpen={isSidebarOpen} setIsBlurComponentOn={setIsBlurComponentOn}
+                                setIsSidebarOpen={setIsSidebarOpen} sendCategory={sendCategory} />
+                        <BlurTextureComponent isBlurCompnentOn={isBlurCompnentOn} isSidebarOpen={isSidebarOpen} />
                         {mobileToDesktopSearchBar ? (
                                 <div className="tempNavbarContainer">
                                         <div className="navbar-middle-tempSearchBar">
@@ -89,11 +117,11 @@ export default function Navbar() {
                                         </div>
                                 </div>
                         ) : (
-                                <header className="navbar-header">
+                                <header className="navbar-header" >
                                         <nav className="navbar">
                                                 <div className="navbar-left">
                                                         <div className="hamburger-div">
-                                                                <MenuIcon className="hamburger" sx={{ fontSize: 30 }} />
+                                                                <MenuIcon className="hamburger" sx={{ fontSize: 30 }} onClick={() => { setIsSidebarOpen(!isSidebarOpen); setIsBlurComponentOn(true) }} />
                                                         </div>
                                                         <div className="log-div">
                                                                 <img
@@ -141,14 +169,7 @@ export default function Navbar() {
                                                                 <SearchIcon sx={{ fontSize: 30, margin: "0px 5px 0px 5px" }} />
                                                         </div>
                                                 </div>
-                                                {/* <div className="navbar-middle-mobile">
-            <div className="search-for-mobile">
-              <SearchIcon
-                sx={{ fontSize: 30 }}
-                onClick={handleMobileToDesktopSearchBar}
-              />
-            </div>
-          </div> */}
+
                                                 {/* {mobileToDesktopSearchBar && <MiddleNavbar />} */}
                                                 <div className="navbar-middle-mobile">
                                                         <div className="search-for-mobile">
@@ -178,8 +199,12 @@ export default function Navbar() {
                                                 </div>
                                         </nav>
                                 </header>
+
                         )}
-                        {/* <SearchBarForDesktop /> */}
+                        <ButtonComponent />
+                        <FeedVideos selectedCategory={selectedCategory} isSidebarOpen={isSidebarOpen}
+                        />
+                        <MiniSidebar />
                 </>
         );
 }

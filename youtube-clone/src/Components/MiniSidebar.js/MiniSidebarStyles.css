@@ -1,0 +1,38 @@
+.ytd-mini-sidebar {
+	position: fixed;
+	top: 56px;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	height: 608px;
+	width: 64px;
+	/* background-color: #f8f8f8; */
+}
+.ytd-mini-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+	height: 300px;
+}
+.ytd-mini-sidebar-item {
+	/* border: 1px solid black; */
+	width: 100%;
+	text-align: center;
+	padding: 16px 14px;
+}
+.ytd-mini-sidebar-item:hover {
+	background-color: #e8e8e8;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.ytd-mini-sidebar-title {
+	font-size: 10px;
+}
+/* ---------------------------- Mobile Responsivenes ---------------------------------------------------------------*/
+@media screen and (max-width: 860px) {
+	.ytd-mini-sidebar {
+		visibility: hidden;
+		width: 0;
+	}
+}

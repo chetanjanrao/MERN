@@ -1,0 +1,17 @@
+.blur-texture-active {
+	position: fixed;
+
+	top: 0;
+	right: 0;
+	z-index: 2;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	opacity: 0.6;
+	background-color: black;
+}
+
+.blur-texture-inactive {
+	display: none;
+}
